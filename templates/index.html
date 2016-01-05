@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My demo</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+
+      <div class="jumbotron">
+        <h1>My demo</h1>
+        <form class="form-signin">
+        <label for="inputName" class="sr-only">Name</label>
+        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
+
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Aceptar</button>
+      </form>
+      </div>
+
+
+<script>
+
+    $(function() {
+    $('#btnSignUp').click(function() {
+console.log('test de button')
+        $.ajax({
+            url: '/',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+});
+</script>
+
+
+
+    </div>
+  </body>
+</html>
